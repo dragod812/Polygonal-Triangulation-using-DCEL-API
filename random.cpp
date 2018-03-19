@@ -1,31 +1,21 @@
 #include<iostream>
 #include<memory>
 using namespace std;
- 
-class A
+#define FPRINT(X) cout.width(10); cout << left << X 
+void func(shared_ptr<int> &A)
 {
-public:
-    void show() {  cout << "A::show()" << endl; }
-};
- 
+	shared_ptr<int> P(new int(7));
+	A = P;
+	cout << P.use_count() << endl;
+	cout << *P << endl;
+}
 int main()
 {
-    // p1 is an auto_ptr of type A
-    auto_ptr<A> p1(new A);
-    p1 -> show();
- 
-    // returns the memory address of p1
-    cout << p1.get() << endl;
- 
-    // copy constructor called, this makes p1 empty.
-    auto_ptr <A> p2(p1);
-    p2 -> show();
- 
-    // p1 is empty now
-    cout << p1.get() << endl;
- 
-    // p1 gets copied in p2
-    cout<< p2.get() << endl;
- 
-    return 0;
+	shared_ptr<int> A;
+	func(A);
+	cout << A.use_count() << endl;
+	int x = 5, y = 2000;
+	string res = "(" + to_string(x) + "," + to_string(y) + ")";
+	FPRINT(res);
+	return 0;
 }

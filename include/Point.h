@@ -22,5 +22,9 @@ public:
     void print(){
         cout << "(" << x << "," << y << ")"<<endl;
     }
+	string toString(){
+		string res = "(" + to_string(x) + "," + to_string(y) + ")";
+		return res;
+	}
 };
 #endif
