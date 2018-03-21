@@ -19,6 +19,10 @@ public:
     bool operator != (const Point &rhs) const {
         return (x != rhs.x || y != rhs.y);
     }
+	Point operator - (const Point &rhs){
+		Point<T> P(x-rhs.x,y-rhs.y); 
+		return P;
+    }
     void print(){
         cout << "(" << x << "," << y << ")"<<endl;
     }

@@ -20,7 +20,10 @@ int main(){
 	}
 	DCEL<int> DD(P, E);
 	DD.print();
-	Point<int> U(0,2), V(-1,-1);
+    DD.MakeMonotone();
+    /* 
+	Point<int> U(0,0), V(-1,-1);
+
 	shared_ptr< Vertex<int> > u, v;
 	for(int i = 0;i<DD.VT.size();i++){
 		if(DD.VT[i]->Coord == U)
@@ -28,22 +31,10 @@ int main(){
 		if(DD.VT[i]->Coord == V)
 			v = DD.VT[i];
 	}
-	cout << u->Coord.toString() << " | " << v->Coord.toString() << endl;	
+	cout << u->Coord.toString() << " | " << v->Coord.toString() << " | " << u->IE->IF.get() << endl;	
 	cout << "after adding Edge" << endl;
 	DD.addEdge(u, v, u->IE->IF);
 	DD.print();
-	V.x = 1; V.y = -1;
-	cout << u->Coord.toString() << " | " << v->Coord.toString() << endl;	
-	for(int i = 0;i<DD.VT.size();i++){
-		if(DD.VT[i]->Coord == U)
-			u = DD.VT[i];
-		if(DD.VT[i]->Coord == V)
-			v = DD.VT[i];
-	}
-	cout << u->Coord.toString() << " | " << v->Coord.toString() << endl;	
-	cout << "after adding Edge" << endl;
-	DD.addEdge(u, v, u->IE->IF);
-	DD.print();
-
+    */
 	return 0;
 }
